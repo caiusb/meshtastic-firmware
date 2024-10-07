@@ -91,6 +91,8 @@ class Screen
 /// Convert an integer GPS coords to a floating point
 #define DegD(i) (i * 1e-7)
 
+#define MAX_NODES_TO_SHOW (0U)
+
 namespace
 {
 /// A basic 2D point class for drawing

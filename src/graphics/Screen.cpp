@@ -2079,7 +2079,7 @@ void Screen::setFrames(FrameFocus focus)
 
     // then all the nodes
     // We only show a few nodes in our scrolling list - because meshes with many nodes would have too many screens
-    size_t numToShow = min(numMeshNodes, 4U);
+    size_t numToShow = min(numMeshNodes, MAX_NODES_TO_SHOW);
     for (size_t i = 0; i < numToShow; i++)
         normalFrames[numframes++] = drawNodeInfo;
 

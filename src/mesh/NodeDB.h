@@ -160,6 +160,13 @@ class NodeDB
             localPosition.timestamp = position.timestamp > 0 ? position.timestamp : position.time;
             return;
         }
+
+        if (position.timestamp < localPosition.timestamp) {
+            LOG_WARN("Position is older than local position; ignoring. Position timestamp: %u; Local timestamp: %u",
+                     position.timestamp, localPosition.timestamp);
+            return;
+        }
+
         LOG_DEBUG("Set local position: lat=%i lon=%i time=%u timestamp=%u", position.latitude_i, position.longitude_i,
                   position.time, position.timestamp);
         localPosition = position;
